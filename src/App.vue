@@ -1,15 +1,22 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template id="app">
+  <div class="wrapper">
+    <ImageUpload/>
+    <ColorBox/>
+  </div>
+  <SelectedImage/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageUpload from '@/components/ImageUpload';
+import SelectedImage from '@/components/SelectedImage';
+import ColorBox from '@/components/ColorBox';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ColorBox,
+    SelectedImage,
+    ImageUpload,
   }
 }
 </script>
@@ -21,6 +28,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper > * {
+  flex: 1;
 }
 </style>
