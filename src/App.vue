@@ -1,23 +1,30 @@
 <template id="app">
-  <div class="wrapper">
+  <div class="headingWrapper">
     <ImageUpload/>
-    <ColorBox/>
+    <ColorBox :boxColor="colorValue" />
   </div>
-  <SelectedImage/>
+  <SelectedImage @current-color="addColorToBox"/>
 </template>
 
 <script>
-import ImageUpload from '@/components/ImageUpload';
-import SelectedImage from '@/components/SelectedImage';
-import ColorBox from '@/components/ColorBox';
+
+import ImageUpload from "@/components/ImageUpload";
+import ColorBox from "@/components/ColorBox";
+import SelectedImage from "@/components/SelectedImage";
 
 export default {
   name: 'App',
-  components: {
-    ColorBox,
-    SelectedImage,
-    ImageUpload,
-  }
+  components: { ColorBox, ImageUpload, SelectedImage },
+  data() {
+    return {
+      colorValue: null
+    }
+  },
+  methods: {
+    addColorToBox(color) {
+      this.colorValue = color;
+    }
+  },
 }
 </script>
 
@@ -35,11 +42,11 @@ body {
   padding: 0;
   overflow: hidden;
 }
-.wrapper {
+.headingWrapper {
   display: flex;
   flex-direction: row;
 }
-.wrapper > * {
+.headingWrapper > * {
   flex: 1;
 }
 </style>

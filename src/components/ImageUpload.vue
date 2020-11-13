@@ -21,13 +21,13 @@ export default {
   margin: 0 auto 25px;
   border: 1px solid black;
 }
-input {
+.inputWrapper input {
   flex: 3;
   height: 100%;
   visibility: hidden;
   pointer-events: none;
 }
-.uploadButton {
+.inputWrapper .uploadButton {
   flex: 1;
   height: 100%;
   padding: 10px 20px;
@@ -36,10 +36,10 @@ input {
   border: none;
   cursor: pointer;
 }
-.uploadButton:hover {
+.inputWrapper .uploadButton:hover {
   opacity: .8;
 }
-.uploadButton:active {
+.inputWrapper .uploadButton:active {
   opacity: .9;
 }
 </style>
